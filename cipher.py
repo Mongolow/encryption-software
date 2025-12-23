@@ -54,7 +54,7 @@ class Cipher:
 
 
 x = Cipher()
-#x.encrypt('Zrzut ekranu 2025-12-23 202732.png')
-x.decrypt('Zrzut ekranu 2025-12-23 202732.png','1-8-6-1-5-9-6-9-8-8-9-7-8-3-7-9-5-3-9-8')
+#x.encrypt('test.txt')
+x.decrypt('test.txt','1-1-9-5-9-4-2-1-3-8-1-6-6-9-6-10-6-1-4-10')
 
 
