@@ -16,7 +16,7 @@ class Cipher:
         encrypted = bytearray()
         for char in file_content:
             char = char + key[counter]
-            encrypted.append(char)
+            encrypted.append(char % 256)
             counter += 1
             if counter > len(key) - 1:
                 counter = 0
@@ -40,7 +40,7 @@ class Cipher:
         decrypted = bytearray()
         for char in file_content:
             char = char - int(key[counter])
-            decrypted.append(char)
+            decrypted.append(char % 256)
             counter += 1
             if counter > len(key) - 1:
                 counter = 0
@@ -54,7 +54,7 @@ class Cipher:
 
 
 x = Cipher()
-#x.encrypt('test.csv')
-x.decrypt('test.csv','4-9-3-5-10-2-6-3-1-6-7-1-8-1-8-8-8-7-7-3')
+#x.encrypt('Zrzut ekranu 2025-12-23 202732.png')
+x.decrypt('Zrzut ekranu 2025-12-23 202732.png','1-8-6-1-5-9-6-9-8-8-9-7-8-3-7-9-5-3-9-8')
 
 
