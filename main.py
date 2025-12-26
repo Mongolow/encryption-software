@@ -8,18 +8,24 @@ while True:
         if_backup = input('Do you want to make backup copy? (Y/N) ')
         if if_backup == 'Y' or if_backup == 'y':
             filename = input('Type filename: ')
-            x.encrypt_with_copy(filename)
-            break
+            try:
+                x.encrypt_with_copy(filename)
+            except FileNotFoundError:
+                print('\nFile not found, try again\n')
         if if_backup == 'N' or if_backup == 'n':
             filename = input('Type filename: ')
-            x.encrypt(filename)
-            break
+            try:
+                x.encrypt(filename)
+            except FileNotFoundError:
+                print('\nFile not found, try again\n')
     if what_number == '2':
         filename = input('Type filename: ')
         key = input('Type key: ')
-        x.decrypt(filename,key)
-        break
+        try:
+            x.decrypt(filename,key)
+        except FileNotFoundError:
+            print('\nFile not found, try again\n')
     if what_number == '3':
         break
     else:
-        print('\nWrong input, try again\n')
+        print('Wrong input, try again\n')
