@@ -28,6 +28,7 @@ class Cipher:
         for x in key:
             key_ = key_ + '-' + str(x)
         print(f'key = {key_[1:len(key_)]}')
+        return key_[1:len(key_)]
     def decrypt(self,filename,key):
         #file read
         with open(filename,'rb') as file:
@@ -75,3 +76,4 @@ class Cipher:
         for x in key:
             key_ = key_ + '-' + str(x)
         print(f'key = {key_[1:len(key_)]}')
+        return key_[1:len(key_)]

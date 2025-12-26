@@ -6,10 +6,10 @@ while True:
     what_number = input('1. encrypt file\n2. decrypt file\n3. quit\n')
     if what_number == '1':
         if_backup = input('Do you want to make backup copy? (Y/N) ')
-        if if_backup == 'Y':
+        if if_backup == 'Y' or if_backup == 'y':
             filename = input('Type filename: ')
             x.encrypt_with_copy(filename)
-        if if_backup == 'N':
+        if if_backup == 'N' or if_backup == 'n':
             filename = input('Type filename: ')
             x.encrypt(filename)
     if what_number == '2':
@@ -18,5 +18,5 @@ while True:
         x.decrypt(filename,key)
     if what_number == '3':
         break
-
-    
+    else:
+        print('\nWrong input, try again\n')
