@@ -9,13 +9,16 @@ while True:
         if if_backup == 'Y' or if_backup == 'y':
             filename = input('Type filename: ')
             x.encrypt_with_copy(filename)
+            break
         if if_backup == 'N' or if_backup == 'n':
             filename = input('Type filename: ')
             x.encrypt(filename)
+            break
     if what_number == '2':
         filename = input('Type filename: ')
         key = input('Type key: ')
         x.decrypt(filename,key)
+        break
     if what_number == '3':
         break
     else:
