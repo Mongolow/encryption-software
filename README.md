@@ -39,12 +39,8 @@ Usage examples
 
 Security notice
 ---------------
-- This algorithm is educational only. Although `secrets` improves randomness, the method of adding byte values with a repeating short key is not secure.
+- This algorithm is educational only.
 - Do not use this program to encrypt real sensitive data.
-
-Development and testing
------------------------
-- Add tests under a `tests/` folder and run them with `pytest`.
 
 Contact / Author
 ----------------
