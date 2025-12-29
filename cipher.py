@@ -17,7 +17,12 @@ class Cipher:
         counter = 0
         encrypted = bytearray()
         for char in file_content:
-            char = char + key[counter]
+            if counter % 2 == 0:
+                char = char + key[counter]
+            else:
+                char = char - key[counter]
+                if char < 0:
+                    char = char + 256
             encrypted.append(char % 256)
             counter += 1
             if counter > len(key) - 1:
@@ -42,7 +47,12 @@ class Cipher:
         counter = 0
         decrypted = bytearray()
         for char in file_content:
-            char = char - int(key[counter])
+            if counter % 2 == 0:
+                char = char - int(key[counter])
+                if char < 0:
+                    char = char + 256
+            else:
+                char = char + int(key[counter])
             decrypted.append(char % 256)
             counter += 1
             if counter > len(key) - 1:
@@ -69,7 +79,12 @@ class Cipher:
         counter = 0
         encrypted = bytearray()
         for char in file_content:
-            char = char + key[counter]
+            if counter % 2 == 0:
+                char = char + key[counter]
+            else:
+                char = char - key[counter]
+                if char < 0:
+                    char = char + 256
             encrypted.append(char % 256)
             counter += 1
             if counter > len(key) - 1:
