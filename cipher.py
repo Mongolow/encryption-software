@@ -1,4 +1,4 @@
-
+import zlib
 import secrets
 class Cipher:
     def __init__(self):
@@ -7,6 +7,8 @@ class Cipher:
         #file bytes read 
         with open(filename,'rb') as file:
             file_content = file.read()
+        #file compress
+        file_content = zlib.compress(file_content)
         #key generation
         key = []
         for x in range(0,20):
@@ -45,6 +47,8 @@ class Cipher:
             counter += 1
             if counter > len(key) - 1:
                 counter = 0
+        #file decompress
+        decrypted = zlib.decompress(decrypted)
         #changing file
         with open(filename,'wb') as file:
             file.write(decrypted)
@@ -55,6 +59,8 @@ class Cipher:
         #making backup copy
         with open(f'backup_{filename}','wb') as file:
             file.write(file_content)
+        #file compress
+        file_content = zlib.compress(file_content)
         #key generation
         key = []
         for x in range(0,20):

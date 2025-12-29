@@ -27,5 +27,3 @@ while True:
             print('\nFile not found, try again\n')
     if what_number == '3':
         break
-    else:
-        print('Wrong input, try again\n')
