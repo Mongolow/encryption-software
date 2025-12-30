@@ -12,7 +12,7 @@ class Cipher:
         #key generation
         key = []
         for x in range(0,20):
-            key.append(secrets.randbelow(10)+1)
+            key.append(secrets.randbelow(255) + 1)
         #file encrypt
         counter = 0
         encrypted = bytearray()
@@ -74,7 +74,7 @@ class Cipher:
         #key generation
         key = []
         for x in range(0,20):
-            key.append(secrets.randbelow(10)+1)
+            key.append(secrets.randbelow(255) + 1)
         #file encrypt
         counter = 0
         encrypted = bytearray()
